@@ -25,6 +25,26 @@
 
                 <CalendarDatePicker x:Name="RegistrationDatePicker" Watermark="Дата регистрации" />
 
+                <TextBlock Text="Клиент" FontSize="14" FontWeight="Medium" />
+                <ComboBox x:Name="ClientsBox" x:CompileBindings="False" HorizontalAlignment="Stretch">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock Text="Оборудование" FontSize="14" FontWeight="Medium" />
+                <ComboBox x:Name="EquipmentBox" x:CompileBindings="False" HorizontalAlignment="Stretch" PlaceholderText="Выберите существующее">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding SerialEquipment}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBox x:Name="SerialBox" Watermark="Или новый серийный номер" />
+                <TextBox x:Name="EquipmentTypeBox" Watermark="Тип нового оборудования" />
+
                 <TextBlock x:Name="ErrorBox" Text="" FontSize="14" FontWeight="Bold"
                         Foreground="Red" />
 

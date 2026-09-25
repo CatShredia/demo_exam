@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>DemoExam1</RootNamespace>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -21,6 +21,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Pages\LoginPage.axaml.cs">
@@ -31,6 +32,21 @@
     </Compile>
     <Compile Update="Pages\EquipmentTaskForm.axaml.cs">
       <DependentUpon>EquipmentTaskForm.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\TaskListWindow.axaml.cs">
+      <DependentUpon>TaskListWindow.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\TaskDetailsWindow.axaml.cs">
+      <DependentUpon>TaskDetailsWindow.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\ClientsWindow.axaml.cs">
+      <DependentUpon>ClientsWindow.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\UsersWindow.axaml.cs">
+      <DependentUpon>UsersWindow.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\MonitoringWindow.axaml.cs">
+      <DependentUpon>MonitoringWindow.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

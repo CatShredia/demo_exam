@@ -16,5 +16,21 @@
             <Button Content="Регистрация задачи" 
                 Click="ShowRegisterOfTask" 
                 HorizontalAlignment="Left" Padding="20,5"/>
+
+            <Button x:Name="TasksButton" Content="Заявки"
+                Click="ShowTasks"
+                HorizontalAlignment="Left" Padding="20,5"/>
+
+            <Button x:Name="ClientsButton" Content="Клиенты"
+                Click="ShowClients"
+                HorizontalAlignment="Left" Padding="20,5"/>
+
+            <Button x:Name="UsersButton" Content="Пользователи"
+                Click="ShowUsers"
+                HorizontalAlignment="Left" Padding="20,5"/>
+
+            <Button x:Name="MonitorButton" Content="Мониторинг"
+                Click="ShowMonitoring"
+                HorizontalAlignment="Left" Padding="20,5"/>
         </StackPanel>
 </Window>

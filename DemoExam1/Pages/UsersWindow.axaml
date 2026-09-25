@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DemoExam1.Pages.UsersWindow"
+        x:CompileBindings="False"
+        Background="White"
+        Title="Пользователи"
+        Width="640" Height="560">
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Пользователи" FontSize="18" FontWeight="Bold" Foreground="#555555"/>
+        <TextBlock Text="Логин и пароль выдаёт администратор." Foreground="#666666"/>
+        <DataGrid x:Name="UsersGrid"
+                  x:CompileBindings="False"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Height="240">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="*"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="*"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding Role}" Width="140"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="LoginBox" PlaceholderText="Логин"/>
+        <TextBox x:Name="PasswordBox" PlaceholderText="Пароль" PasswordChar="*"/>
+        <TextBox x:Name="PhoneBox" PlaceholderText="Телефон"/>
+        <ComboBox x:Name="RoleBox" HorizontalAlignment="Stretch"/>
+        <Button Content="Выдать доступ" Click="Add_Click" Background="#6E6E6E" Foreground="White" Padding="16,6" HorizontalAlignment="Left"/>
+        <TextBlock x:Name="ErrorText" Foreground="Red"/>
+    </StackPanel>
+</Window>

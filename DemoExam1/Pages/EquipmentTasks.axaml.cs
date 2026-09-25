@@ -22,7 +22,7 @@ namespace DemoExam1.Pages
                 return;
 
             task.Status = TaskStatus.Working;
-            task.DateOfStartWork = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc);
+            task.DateOfStartWork = DateTime.UtcNow;
 
             App.DbContext!.SaveChanges();
             TasksDataGrid.ItemsSource = App.DbContext.Tasks.ToList();

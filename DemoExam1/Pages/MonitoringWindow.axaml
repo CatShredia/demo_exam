@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DemoExam1.Pages.MonitoringWindow"
+        x:CompileBindings="False"
+        Background="White"
+        Title="Мониторинг"
+        Width="640" Height="520">
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Мониторинг" FontSize="18" FontWeight="Bold" Foreground="#555555"/>
+        <TextBlock x:Name="ScopeText" Foreground="#666666"/>
+        <TextBlock x:Name="CompletedText" FontSize="16"/>
+        <TextBlock x:Name="AverageText" FontSize="16"/>
+        <TextBlock Text="Статистика по типам неисправностей" FontWeight="Bold" Foreground="#555555"/>
+        <DataGrid x:Name="StatsGrid"
+                  x:CompileBindings="False"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Height="280">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Тип неисправности" Binding="{Binding Type}" Width="*"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Count}" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>

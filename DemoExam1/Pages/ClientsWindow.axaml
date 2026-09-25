@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DemoExam1.Pages.ClientsWindow"
+        x:CompileBindings="False"
+        Background="White"
+        Title="Клиенты"
+        Width="520" Height="480">
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Клиенты" FontSize="18" FontWeight="Bold" Foreground="#555555"/>
+        <DataGrid x:Name="ClientsGrid"
+                  x:CompileBindings="False"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Height="280">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding Id}" Width="80"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="NameBox" PlaceholderText="Имя клиента"/>
+        <Button Content="Добавить клиента" Click="Add_Click" Background="#6E6E6E" Foreground="White" Padding="16,6" HorizontalAlignment="Left"/>
+        <TextBlock x:Name="ErrorText" Foreground="Red"/>
+    </StackPanel>
+</Window>

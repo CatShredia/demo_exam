@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DemoExam1.Pages.TaskListWindow"
+        x:CompileBindings="False"
+        Background="White"
+        Title="Заявки"
+        Width="900" Height="640">
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock x:Name="TitleText" Text="Заявки" FontSize="18" FontWeight="Bold" Foreground="#555555"/>
+        <TextBlock x:Name="ScopeText" Foreground="#666666"/>
+
+        <TextBox x:Name="ProblemBox" PlaceholderText="Проблема или комментарий"/>
+        <TextBox x:Name="PriorityBox" PlaceholderText="Приоритет"/>
+        <TextBox x:Name="ClientBox" PlaceholderText="Клиент"/>
+        <ComboBox x:Name="StatusBox" PlaceholderText="Статус" HorizontalAlignment="Stretch"/>
+
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <Button Content="Найти" Click="Search_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+            <Button Content="Сбросить" Click="Reset_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+            <Button Content="Открыть заявку" Click="Open_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+            <Button Content="Обновить" Click="Search_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+        </StackPanel>
+
+        <TextBlock x:Name="ErrorText" Foreground="Red"/>
+
+        <DataGrid x:Name="TasksGrid"
+                  x:CompileBindings="False"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Height="360">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding Id}" Width="70"/>
+                <DataGridTextColumn Header="Приоритет" Binding="{Binding Priority}" Width="110"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="150"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Client}" Width="140"/>
+                <DataGridTextColumn Header="Проблема" Binding="{Binding Problem}" Width="*"/>
+                <DataGridTextColumn Header="Регистрация" Binding="{Binding RegisteredText}" Width="130"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>

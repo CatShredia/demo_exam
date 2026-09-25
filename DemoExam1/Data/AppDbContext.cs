@@ -26,6 +26,16 @@ namespace DemoExam1.Data
         public DbSet<Equipment> Equipment => Set<Equipment>();
         public DbSet<OrderSpare> OrderSpare => Set<OrderSpare>();
         public DbSet<User> User => Set<User>();
+        public DbSet<TaskEquipment> TaskEquipment => Set<TaskEquipment>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TaskEquipment>()
+                .HasOne(x => x.Equipment)
+                .WithMany()
+                .HasForeignKey(x => x.EquipmentId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 
 }

@@ -1,0 +1,101 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DemoExam1.Pages.TaskDetailsWindow"
+        x:CompileBindings="False"
+        Background="White"
+        Title="Заявка"
+        Width="760" Height="720">
+    <ScrollViewer>
+        <StackPanel Margin="20" Spacing="10">
+            <TextBlock x:Name="HeaderText" FontSize="18" FontWeight="Bold" Foreground="#555555"/>
+            <TextBlock x:Name="StatusText" FontSize="14"/>
+            <TextBlock x:Name="LegacyEquipmentText" TextWrapping="Wrap" Foreground="#666666"/>
+            <Image x:Name="QrImage" Width="140" Height="140" HorizontalAlignment="Left"/>
+
+            <TextBlock Text="Описание" FontWeight="Bold" Foreground="#555555"/>
+            <TextBox x:Name="PriorityBox" PlaceholderText="Приоритет"/>
+            <ComboBox x:Name="ClientsBox" HorizontalAlignment="Stretch">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBox x:Name="CommentBox" PlaceholderText="Комментарий клиента" AcceptsReturn="True" Height="60"/>
+            <TextBox x:Name="ProblemBox" PlaceholderText="Неисправность" AcceptsReturn="True" Height="60"/>
+            <TextBox x:Name="ProblemTypeBox" PlaceholderText="Тип неисправности"/>
+            <Button x:Name="SaveDescriptionButton" Content="Сохранить описание" Click="SaveDescription_Click" Background="#6E6E6E" Foreground="White" Padding="16,6" HorizontalAlignment="Left"/>
+
+            <TextBlock Text="Ответственные специалисты" FontWeight="Bold" Foreground="#555555"/>
+            <ListBox x:Name="SpecialistsList" Height="90">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Login}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ComboBox x:Name="SpecialistBox" HorizontalAlignment="Stretch">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Login}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <Button x:Name="AddSpecialistButton" Content="Назначить" Click="AddSpecialist_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+                <Button x:Name="RemoveSpecialistButton" Content="Снять" Click="RemoveSpecialist_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+            </StackPanel>
+
+            <TextBlock Text="Статус" FontWeight="Bold" Foreground="#555555"/>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <Button x:Name="TakeButton" Content="Взять в работу" Click="Take_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+                <Button x:Name="CancelButton" Content="Отменить" Click="Cancel_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+                <Button x:Name="FinishButton" Content="Выполнить" Click="Finish_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+            </StackPanel>
+
+            <TextBlock Text="Отчёт специалиста" FontWeight="Bold" Foreground="#555555"/>
+            <TextBox x:Name="HoursBox" PlaceholderText="Затраченные часы"/>
+            <TextBox x:Name="ReportBox" PlaceholderText="Репорт" AcceptsReturn="True" Height="70"/>
+            <Button x:Name="SaveReportButton" Content="Сохранить отчёт" Click="SaveReport_Click" Background="#6E6E6E" Foreground="White" Padding="16,6" HorizontalAlignment="Left"/>
+
+            <TextBlock Text="Материалы и стоимость" FontWeight="Bold" Foreground="#555555"/>
+            <DataGrid x:Name="SparesGrid" x:CompileBindings="False" AutoGenerateColumns="False" IsReadOnly="True" Height="120">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Материал" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="Ожидаемая стоимость" Binding="{Binding Expected}" Width="160"/>
+                    <DataGridTextColumn Header="Итого" Binding="{Binding Total}" Width="100"/>
+                    <DataGridTextColumn Header="Заказ" Binding="{Binding Ordered}" Width="120"/>
+                    <DataGridTextColumn Header="Получение" Binding="{Binding Received}" Width="120"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBox x:Name="SpareNameBox" PlaceholderText="Название материала"/>
+            <TextBox x:Name="ExpectedCostBox" PlaceholderText="Ожидаемая стоимость"/>
+            <TextBox x:Name="TotalCostBox" PlaceholderText="Итоговая стоимость"/>
+            <CalendarDatePicker x:Name="GettingDatePicker" PlaceholderText="Дата получения"/>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <Button x:Name="AddSpareButton" Content="Добавить материал" Click="AddSpare_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+                <Button x:Name="RemoveSpareButton" Content="Удалить материал" Click="RemoveSpare_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+            </StackPanel>
+
+            <TextBlock Text="Оборудование в заявке" FontWeight="Bold" Foreground="#555555"/>
+            <DataGrid x:Name="LinesGrid" x:CompileBindings="False" AutoGenerateColumns="False" IsReadOnly="True" Height="120">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Серийный номер" Binding="{Binding Serial}" Width="140"/>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="120"/>
+                    <DataGridTextColumn Header="Неисправность" Binding="{Binding Problem}" Width="*"/>
+                    <DataGridTextColumn Header="Тип неисправности" Binding="{Binding ProblemType}" Width="160"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBox x:Name="SerialBox" PlaceholderText="Серийный номер" MaxLength="12"/>
+            <TextBox x:Name="EquipmentTypeBox" PlaceholderText="Тип оборудования"/>
+            <TextBox x:Name="LineProblemBox" PlaceholderText="Неисправность этой единицы"/>
+            <TextBox x:Name="LineProblemTypeBox" PlaceholderText="Тип неисправности"/>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <Button x:Name="AddLineButton" Content="Добавить оборудование" Click="AddLine_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+                <Button x:Name="RemoveLineButton" Content="Убрать оборудование" Click="RemoveLine_Click" Background="#6E6E6E" Foreground="White" Padding="16,6"/>
+            </StackPanel>
+
+            <TextBlock x:Name="ErrorText" Foreground="Red" TextWrapping="Wrap"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

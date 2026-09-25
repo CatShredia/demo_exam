@@ -30,5 +30,8 @@ namespace DemoExam1.Data.Models
         public DateTime? DateOfStartWork{ get; set; }
         public DateTime? DateOfClose{ get; set; }
 
+        public decimal? WorkHours { get; set; }
+        public ICollection<TaskEquipment> EquipmentLines { get; set; } = new List<TaskEquipment>();
+
     }
 }
