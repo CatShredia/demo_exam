@@ -9,8 +9,10 @@
   <StackPanel Margin="20" Spacing="15">
         <TextBlock Text="Вход в аккаунт" FontSize="18" FontWeight="Bold"/>
         
-        <TextBox x:Name="ClientNameBox" Watermark="Логин"/>
-        <TextBox x:Name="CommentBox" Watermark="Пароль"/>
+        <TextBox x:Name="LoginBox" Watermark="Логин"/>
+        <TextBox x:Name="PasswordBox" Watermark="Пароль"/>
+
+        <TextBlock x:Name="ErrorBox" Text="" FontSize="14" FontWeight="Bold" Foreground="Red"/>
         
         <Button Content="Вход" 
                 Click="Login_Button_Click" 

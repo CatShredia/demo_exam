@@ -26,5 +26,8 @@
     <Compile Update="Pages\LoginPage.axaml.cs">
       <DependentUpon>LoginPage.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\EquipmentTasks.axaml.cs">
+      <DependentUpon>EquipmentTasks.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

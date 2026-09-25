@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using System.Linq;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -33,6 +34,8 @@ public partial class App : Application
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
+            CurrentUser = DbContext.User.FirstOrDefault(u => u.UserRole == UserRole.Admin);
+
             if (CurrentUser != null)
             {
                 desktop.MainWindow = new MainWindow();

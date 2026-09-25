@@ -7,6 +7,10 @@
         Title="DemoExam1">
 
         <StackPanel Margin="20" Spacing="15">
-            <TextBlock Text="Вход vrvehvherbi" FontSize="18" FontWeight="Bold"/>
+            <TextBlock x:Name="HelloBox" Text="" FontSize="18" FontWeight="Bold"/>
+
+            <Button Content="Оборудование" 
+                Click="ShowEquipment" 
+                HorizontalAlignment="Left" Padding="20,5"/>
         </StackPanel>
 </Window>
