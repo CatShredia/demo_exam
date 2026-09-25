@@ -15,6 +15,11 @@ public partial class MainWindow : Window
     {
         var mainWindow = new EquipmentTasks();
         mainWindow.Show();
-        this.Close();
+    }
+
+    private void ShowRegisterOfTask(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        var mainWindow = new EquipmentTaskForm();
+        mainWindow.Show();
     }
 }

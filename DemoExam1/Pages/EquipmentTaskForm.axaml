@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="DemoExam1.Pages.EquipmentTaskForm"
+        Title="Window1">
+        <StackPanel Margin="20" Spacing="15">
+                <TextBlock Text="Регистрация задачи" FontSize="18" FontWeight="Bold" />
+
+                <TextBlock Text="Приоритет" FontSize="14" FontWeight="Medium" />
+                <TextBox x:Name="PriorityBox" Watermark="текст" />
+
+                <TextBlock Text="Статус" FontSize="14" FontWeight="Medium" />
+                <TextBox x:Name="StatusBox" Watermark="текст" />
+
+                <TextBlock Text="Комментарий клиента" FontSize="14" FontWeight="Medium" />
+                <TextBox x:Name="ClientCommentBox" Watermark="текст необязательный" />
+
+                <TextBlock Text="Неисправность оборудования" FontSize="14" FontWeight="Medium" />
+                <TextBox x:Name="ProblemBox" Watermark="текст" />
+
+                <TextBlock Text="Тип неисправности" FontSize="14" FontWeight="Medium" />
+                <TextBox x:Name="ProblemTypeBox" Watermark="текст" />
+
+                <CalendarDatePicker x:Name="RegistrationDatePicker" Watermark="Дата регистрации" />
+
+                <TextBlock x:Name="ErrorBox" Text="" FontSize="14" FontWeight="Bold"
+                        Foreground="Red" />
+
+                <Button Content="Регистрация задачи"
+                        Click="Register_Button_Click"
+                        HorizontalAlignment="Left" Padding="20,5" />
+        </StackPanel>
+</Window>

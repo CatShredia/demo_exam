@@ -5,7 +5,7 @@
     xmlns:models="using:DemoExam1.Data.Models"
     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
     x:Class="DemoExam1.Pages.EquipmentTasks"
-    Title="Window1">
+    Title="Оборудование">
     <StackPanel Margin="20" Spacing="15">
 
         <TextBlock Text="Список заявок" FontSize="18" FontWeight="Bold" />
@@ -16,7 +16,7 @@
             IsReadOnly="True" /> -->
 
         <DataGrid x:Name="TasksDataGrid"
-            x:DataType="models:RepairTask"
+            x:CompileBindings="False"
             AutoGenerateColumns="False"
             Height="300"
             IsReadOnly="True">
@@ -26,11 +26,20 @@
                 <DataGridTextColumn Header="Статус" Binding="{Binding Status}" />
                 <DataGridTextColumn Header="Проблема" Binding="{Binding EquipmentProblem}" />
                 <DataGridTextColumn Header="Дата регистрации" Binding="{Binding DateOfRegistration}" />
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Взять в работу"
+                                Click="TakeButton_Click"
+                                Margin="4" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- <Button Content="Обновить таблицу" 
-                Click="LoadButton_Click" 
-                HorizontalAlignment="Left" Padding="20,5"/> -->
+                <Button Content="Обновить таблицу"
+                Click="LoadButton_Click"
+                HorizontalAlignment="Left" Padding="20,5"/>
     </StackPanel>
 </Window>

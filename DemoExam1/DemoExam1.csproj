@@ -29,5 +29,8 @@
     <Compile Update="Pages\EquipmentTasks.axaml.cs">
       <DependentUpon>EquipmentTasks.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\EquipmentTaskForm.axaml.cs">
+      <DependentUpon>EquipmentTaskForm.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

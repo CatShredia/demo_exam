@@ -4,13 +4,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DemoExam1.MainWindow"
-        Title="DemoExam1">
+        Title="DemoExam">
 
         <StackPanel Margin="20" Spacing="15">
             <TextBlock x:Name="HelloBox" Text="" FontSize="18" FontWeight="Bold"/>
 
             <Button Content="Оборудование" 
                 Click="ShowEquipment" 
+                HorizontalAlignment="Left" Padding="20,5"/>
+
+            <Button Content="Регистрация задачи" 
+                Click="ShowRegisterOfTask" 
                 HorizontalAlignment="Left" Padding="20,5"/>
         </StackPanel>
 </Window>
