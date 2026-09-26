@@ -29,7 +29,7 @@
                 <DataGridTextColumn Header="Приоритет" Binding="{Binding Priority}" />
                 <DataGridTextColumn Header="Статус" Binding="{Binding Status}" />
                 <DataGridTextColumn Header="Проблема" Binding="{Binding EquipmentProblem}" />
-                <DataGridTextColumn Header="Дата регистрации" Binding="{Binding DateOfRegistration, Converter={StaticResource LocalTime}}" />
+                <DataGridTextColumn Header="Дата регистрации" Binding="{Binding DateOfRegistration, Mode=OneWay, Converter={StaticResource LocalTime}}" />
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
